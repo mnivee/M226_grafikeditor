@@ -1,12 +1,20 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Gruppe {
-    private List<Gruppe> childGruppe;
+    protected ArrayList<Figur> figurGruppe;
 
     public Gruppe(){
-        childGruppe= new ArrayList<>();
+        figurGruppe= new ArrayList<Figur>();
     }
+
+    /*
+        * Figuren hinzufügen
+        * param f
+     */
+    public void setFigurGruppe(Figur f){
+        figurGruppe.add(f);
+    }
+
 }

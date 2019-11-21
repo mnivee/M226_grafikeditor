@@ -1,23 +1,24 @@
 package com.company;
 
+import java.awt.*;
+
 public class Linie extends Figur {
-    protected int positionX;
-    protected int positionY;
-    protected int endX = 70;
-    protected int endY = 60;
+    protected int endeX;
+    protected int endeY;
 
-    public Linie( int  x, int y, int posX, int posY){
-        super(x, y);
-        this.positionX = posX;
-        this.positionY = posY;
+
+    public Linie(int positionX, int positionY, int endeX, int endeY,int linienStaerke, Color linienFarbe){
+        super(positionX, positionY, linienStaerke, linienFarbe);
+        this.endeX = endeX;
+        this.endeY = endeY;
     }
 
-    public int getPositionX(){
-        return endX;
+    public int getEndeX(){
+        return endeX;
 
     }
 
-    public int getPositionY(){
-        return endY;
+    public int getEndeY(){
+        return endeY;
     }
 }

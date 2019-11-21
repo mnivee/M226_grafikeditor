@@ -1,19 +1,46 @@
 package com.company;
 
+import java.awt.*;
+
 public class Figur {
-    protected int startPositionX;
-    protected int startPositionY;
+    protected int positionX;
+    protected int positionY;
+    protected int linienStaerke;
+    protected Color linienFarbe;
+    protected Color fuellFarbe;
 
-    public Figur(int x, int y){
-        this.startPositionX = x;
-        this.startPositionY = y;
+    public Figur(int positionX, int positionY, int linienStaerke, Color linienFarbe, Color fuellFarbe){
+        this.positionX = positionX;
+        this.positionY = positionY;
+        this.linienStaerke = linienStaerke;
+        this.linienFarbe = linienFarbe;
+        this.fuellFarbe = fuellFarbe;
     }
 
-    public int getX() {
-        return startPositionX;
+    public Figur(int positionX, int positionY, int linienStaerke, Color linienFarbe){
+        this.positionX = positionX;
+        this.positionY = positionY;
+        this.linienStaerke = linienStaerke;
+        this.linienFarbe = linienFarbe;
     }
 
-    public int getY(){
-        return startPositionY;
+    public int getPositionX() {
+        return positionX;
+    }
+
+    public int getPositionY(){
+        return positionY;
+    }
+
+    public int getLinienStaerke(){
+        return linienStaerke;
+    }
+
+    public Color getLinienFarbe(){
+        return linienFarbe;
+    }
+
+    public Color getFuellFarbe(){
+        return fuellFarbe;
     }
 }

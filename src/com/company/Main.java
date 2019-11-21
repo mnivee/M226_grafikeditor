@@ -1,23 +1,31 @@
 package com.company;
 
+import java.awt.*;
+
 public class Main {
 	private static final Display display = new Display();
-
+	private static Gruppe gruppe = new Gruppe();
     public static void main(String[] args) {
-	Rechteck r = new Rechteck(150, 150, 150, 150);
-	display.hinzufuegen(r);
+	Rechteck rechteck = new Rechteck(290, 290, 240, 240, 3, Color.cyan, Color.cyan );
+	Kreis kreis = new Kreis(150, 150, 30, 3, Color.orange, Color.orange);
+	Ellipse ellipse = new Ellipse(200, 200, 40, 50, 3, Color.pink, Color.pink);
+	Linie linie = new Linie(250, 250, 35, 60, 3,Color.yellow);
+	Text text = new Text(100, 100, "Grafikeditor", 3, Color.blue);
 
-	Kreis k = new Kreis(100, 200, 200);
-	display.hinzufuegen(k);
+	display.hinzufuegen(rechteck);
+	display.hinzufuegen(kreis);
+	display.hinzufuegen(ellipse);
+	display.hinzufuegen(linie);
+	display.hinzufuegen(text);
 
-	Ellipse e = new Ellipse(25,25,50,80);
-	display.hinzufuegen(e);
-
-	Linie l = new Linie(0, 0, 0, 0);
-	display.hinzufuegen(l);
-
-	Gruppe g = new Gruppe();
-
+	gruppe.setFigurGruppe(kreis);
+	gruppe.setFigurGruppe(rechteck);
+	gruppeHinzufuege(gruppe);
     }
 
+    public static void gruppeHinzufuege(Gruppe gruppe) {
+    	for(Figur figur : gruppe.figurGruppe){
+			display.hinzufuegen(figur);
+		}
+	}
 }

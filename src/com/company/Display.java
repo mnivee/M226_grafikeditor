@@ -7,6 +7,7 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.text.ElementIterator;
+import javax.swing.text.TabExpander;
 
 /**
  * Die Klasse Display stellt ein Fenster auf dem Bildschirm zur Verf�gung, in welchem
@@ -60,23 +61,27 @@ public class Display extends JFrame {
      * @param g Referenz auf das Graphics-Objekt zum zeichnen.
      */
     private void zeichneFiguren(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
         for (Figur f : figuren) {
             if (f instanceof Rechteck) {
                 Rechteck r = (Rechteck) f;
-                g.drawRect(r.getX(), r.getY(), r.getBreite(), r.getHoehe());
-                g.setColor(Color.green);
+                zeichneRechteck(g2, r);
             }
-            if(f instanceof Linie){
+            else if(f instanceof Linie){
                 Linie l = (Linie)f;
-                g.drawLine(l.getX(), l.getY(),l.getPositionX(), l.getPositionY());
+                zeichneLinie(g2, l);
             }
-            if(f instanceof Kreis) {
-                Kreis r = (Kreis)f;
-                g.drawOval(r.getX(), r.getY(), r.getRadius(), r.getRadius());
+            else if(f instanceof Kreis) {
+                Kreis k = (Kreis)f;
+                zeichneKreis(g2, k);
             }
-            if(f instanceof Ellipse){
+            else if(f instanceof Ellipse){
                 Ellipse e = (Ellipse)f;
-                g.drawOval(e.getX(), e.getY(), e.getWidth(), e.getHeight());
+                zeichneEllipse(g2, e);
+            }
+            else if(f instanceof Text){
+                Text t = (Text)f;
+                zeichneText(g2, t);
             }
 
             }
@@ -100,5 +105,56 @@ public class Display extends JFrame {
             figuren.clear();
             repaint();
         }
-    }
+        /*
+        * Zeichnet einen Rechteck
+         */
+        private void zeichneRechteck(Graphics2D g2, Rechteck r){
+            g2.setStroke(new BasicStroke(r.getLinienStaerke()));
+            g2.setColor(r.getFuellFarbe());
+            g2.fillRect(r.getPositionX(), r.getPositionY(), r.getBreite(), r.getHoehe());
+            g2.setColor(r.getLinienFarbe());
+            g2.drawRect(r.getPositionX(), r.getPositionY(), r.getBreite(), r.getHoehe());
+        }
+
+        /*
+        * Zeichnet eine Linie
+         */
+        private void zeichneLinie(Graphics2D g2, Linie l) {
+            g2.setStroke(new BasicStroke(l.getLinienStaerke()));
+            g2.setColor(l.getLinienFarbe());
+            g2.drawLine(l.getPositionX(), l.getPositionY(), l.getEndeX(), l.getEndeY());
+        }
+
+        /*
+        * Zeichnet einen Kreis
+         */
+        private void zeichneKreis(Graphics2D g2, Kreis k) {
+            g2.setStroke(new BasicStroke(k.getLinienStaerke()));
+            g2.setColor(k.getFuellFarbe());
+            g2.fillOval(k.getPositionX(), k.getPositionY(), k.getRadius(), k.getRadius());
+            g2.setColor(k.getLinienFarbe());
+            g2.drawOval(k.getPositionX(), k.getPositionY(), k.getRadius(), k.getRadius());
+        }
+        /*
+        * Zeichnet eine Ellipse
+         */
+        private void zeichneEllipse(Graphics2D g2, Ellipse e) {
+            g2.setStroke(new BasicStroke(e.getLinienStaerke()));
+            g2.setColor(e.getFuellFarbe());
+            g2.fillOval(e.getPositionX(), e.getPositionY(), e.getLangerRadius(), e.getKurzrRadius());
+            g2.setColor(e.getLinienFarbe());
+            g2.drawOval(e.getPositionX(), e.getPositionY(), e.getLangerRadius(), e.getKurzrRadius());
+        }
+        /*
+        * Schreibt einen Text
+         */
+
+        private void zeichneText(Graphics2D g2, Text t) {
+            Font font = g2.getFont();
+            g2.setFont(new Font(font.getFontName(), Font.PLAIN, t.getLinienStaerke() * font.getSize()));
+            g2.setColor(t.getLinienFarbe());
+            g2.drawString(t.getText(), t.getPositionX(), t.getPositionY());
+        }
+
+}
 
