@@ -12,8 +12,13 @@ public class Main {
 	Linie linie = new Linie(250, 250, 35, 60, 3,Color.yellow);
 	Text text = new Text(100, 100, "Grafikeditor", 3, Color.blue);
 
-	rechteck.move(30, 100);
-	linie.move(200, 120);
+	// rechteck.move(30, 100);
+	// linie.move(10, 120);
+
+	Linie l = new Linie(10, 20, 30, 40, 3, Color.yellow);
+	l.move(10, 10);
+	Figur f = new Linie(10, 20, 30, 40, 3, Color.blue);
+	f.move(10, 10);
 
 	display.hinzufuegen(rechteck);
 	display.hinzufuegen(kreis);
