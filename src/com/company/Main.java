@@ -12,6 +12,9 @@ public class Main {
 	Linie linie = new Linie(250, 250, 35, 60, 3,Color.yellow);
 	Text text = new Text(100, 100, "Grafikeditor", 3, Color.blue);
 
+	rechteck.move(30, 100);
+	linie.move(200, 120);
+
 	display.hinzufuegen(rechteck);
 	display.hinzufuegen(kreis);
 	display.hinzufuegen(ellipse);

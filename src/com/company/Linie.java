@@ -21,4 +21,12 @@ public class Linie extends Figur {
     public int getEndeY(){
         return endeY;
     }
+
+@Override
+    public void move(int deltaX, int deltaY){
+        super.move(deltaX, deltaY);
+        endeX += deltaX;
+        endeY += deltaY;
+    }
+
 }

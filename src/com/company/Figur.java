@@ -43,4 +43,9 @@ public class Figur {
     public Color getFuellFarbe(){
         return fuellFarbe;
     }
+
+    public void move (int deltaX, int deltaY){
+        positionX += deltaX;
+        positionY += deltaY;
+    }
 }
