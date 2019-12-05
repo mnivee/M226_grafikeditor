@@ -83,9 +83,13 @@ public class Display extends JFrame {
                 Text t = (Text)f;
                 zeichneText(g2, t);
             }
+            else if(f instanceof Dreieck){
+                Dreieck d = (Dreieck)f;
+               zeichneDreieck(g2, d);
+            }
 
             }
-            /* TODO: Hier muss f�r jede weitere Figur-Klasse, welche dargestellt werden k�nnen muss,
+            /* TODO: Hier muss für jede weitere Figur-Klasse, welche dargestellt werden k�nnen muss,
              * ein analoger Abschnitt, wie f�r die Rechteck-Klasse folgen.
              */
         }
@@ -123,6 +127,13 @@ public class Display extends JFrame {
             g2.setStroke(new BasicStroke(l.getLinienStaerke()));
             g2.setColor(l.getLinienFarbe());
             g2.drawLine(l.getPositionX(), l.getPositionY(), l.getEndeX(), l.getEndeY());
+        }
+
+        private void zeichneDreieck(Graphics2D g2, Dreieck d){
+            ArrayList<Linie> linien = d.getLinien();
+            for( Linie l : linien){
+                zeichneLinie(g2, l);
+            }
         }
 
         /*

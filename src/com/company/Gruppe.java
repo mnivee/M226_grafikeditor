@@ -2,11 +2,10 @@ package com.company;
 
 import java.util.ArrayList;
 
-public class Gruppe {
-    protected ArrayList<Figur> figurGruppe;
+public class Gruppe extends Figur{
+    public ArrayList<Figur> figurGruppe = new ArrayList<Figur>();
 
-    public Gruppe(){
-        figurGruppe= new ArrayList<Figur>();
+    public void Gruppe() {
     }
 
     /*
@@ -16,5 +15,7 @@ public class Gruppe {
     public void setFigurGruppe(Figur f){
         figurGruppe.add(f);
     }
+
+
 
 }
