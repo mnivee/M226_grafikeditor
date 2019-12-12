@@ -9,7 +9,8 @@ public abstract class Figur {
     protected Color linienFarbe;
     protected Color fuellFarbe;
 
-
+    public Figur(){
+    }
     public Figur(int positionX, int positionY, int linienStaerke, Color linienFarbe, Color fuellFarbe){
         this.positionX = positionX;
         this.positionY = positionY;
@@ -35,7 +36,7 @@ public abstract class Figur {
         positionY += deltaY;
     }
 
-    public Figur(){
+    public Figur(int positionX, int positionY){
     }
     public abstract void zeichne(Graphics g);
 }

@@ -5,6 +5,10 @@ import java.awt.*;
 public class Kreis extends Figur {
     protected int radius;
 
+    public Kreis(int positionX, int positionY , int radius){
+        super(positionX, positionY);
+        this.radius = radius;
+    }
     public Kreis(int positionX, int positionY, int radius,int linienStaerke, Color linienFarbe, Color fuellFarbe){
         super(positionX, positionY, linienStaerke, linienFarbe, fuellFarbe);
         this.radius = radius;

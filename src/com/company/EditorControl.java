@@ -51,7 +51,7 @@ final class EditorControl {
                 int y3 = (int) Math.sqrt(hoehe * hoehe - (hoehe * hoehe) / 4) + ersterPunkt.y;
                 int x3 = hoehe / 2 + ersterPunkt.x;
 
-                Dreieck dreieck = new Dreieck(new Point(ersterPunkt.x, ersterPunkt.y), new Point(zweiterPunkt.x, zweiterPunkt.y), new Point(x3, y3));
+                Dreieck dreieck = new Dreieck(ersterPunkt.x, ersterPunkt.y, zweiterPunkt.x, zweiterPunkt.y, x3, y3, 2, Color.gray);
                 zeichnung.hinzufuegen(dreieck);
                 break;
         }
