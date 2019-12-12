@@ -10,7 +10,17 @@ public class Kreis extends Figur {
         this.radius = radius;
     }
 
-    public int getRadius(){
-        return radius;
+    // @Override
+    public void zeichne(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
+        if (linienFarbe != null) {
+            g2.setStroke(new BasicStroke(linienStaerke));
+            g2.setColor(fuellFarbe);
+            g2.fillOval(positionX, positionY, radius, radius);
+            g2.setColor(linienFarbe);
+            g2.drawOval(positionX, positionY, radius, radius);
+        } else {
+            g2.fillOval(positionX, positionY, radius, radius);
+        }
     }
 }

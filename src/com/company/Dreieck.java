@@ -20,4 +20,9 @@ public class Dreieck extends Figur {
     public ArrayList<Linie> getLinien(){
         return linien;
     }
+    public void zeichne(Graphics g) {
+        for (Linie l : linien) {
+            l.zeichne(g);
+        }
+    }
 }

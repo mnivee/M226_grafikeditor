@@ -11,11 +11,19 @@ public class Rechteck extends Figur{
         this.hoehe = hoehe;
     }
 
-    public int getBreite(){
-        return breite;
-    }
-    public int getHoehe(){
-        return hoehe;
+    // @Override
+
+    public void zeichne(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
+        if (fuellFarbe != null) {
+            g2.setStroke(new BasicStroke(linienStaerke));
+            g2.setColor(fuellFarbe);
+            g2.fillRect(positionX, positionY, breite, hoehe);
+            g2.setColor(linienFarbe);
+            g2.drawRect(positionX, positionY, breite, hoehe);
+        } else {
+            g2.fillRect(positionX, positionY, breite, hoehe);
+        }
     }
 }
 

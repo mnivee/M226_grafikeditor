@@ -2,7 +2,7 @@ package com.company;
 
 import java.awt.*;
 
-public  class Figur {
+public abstract class Figur {
     protected int positionX;
     protected int positionY;
     protected int linienStaerke;
@@ -30,32 +30,12 @@ public  class Figur {
         this.linienFarbe = linienFarbe;
     }
 
-    public int getPositionX() {
-        return positionX;
-    }
-
-    public int getPositionY(){
-        return positionY;
-    }
-
-    public int getLinienStaerke(){
-        return linienStaerke;
-    }
-
-    public Color getLinienFarbe(){
-        return linienFarbe;
-    }
-
-    public Color getFuellFarbe(){
-        return fuellFarbe;
-    }
-
     public void move (int deltaX, int deltaY){
         positionX += deltaX;
         positionY += deltaY;
     }
 
     public Figur(){
-
     }
+    public abstract void zeichne(Graphics g);
 }

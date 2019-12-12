@@ -1,5 +1,5 @@
 package com.company;
-
+import java.awt.*;
 import java.util.ArrayList;
 
 public class Gruppe extends Figur{
@@ -16,6 +16,5 @@ public class Gruppe extends Figur{
         figurGruppe.add(f);
     }
 
-
-
-}
+    public void zeichne(Graphics g) { }
+    }

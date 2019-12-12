@@ -9,8 +9,12 @@ public class Text extends Figur{
         super(positionX, positionY, linienStaerke, linienFarbe);
         this.text = text;
     }
-
-    public String getText(){
-        return text;
+    // @Override
+    public void zeichne(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
+        Font font = g2.getFont();
+        g2.setFont(new Font(font.getFontName(), Font.PLAIN, linienStaerke * font.getSize()));
+        g2.setColor(linienFarbe);
+        g2.drawString(text, positionX, positionY);
     }
 }

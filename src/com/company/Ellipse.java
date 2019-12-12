@@ -11,11 +11,13 @@ public class Ellipse extends Figur{
         this.kurzrRadius = kurzrRadius;
     }
 
-    public int getLangerRadius(){
-        return langerRadius;
-    }
-
-    public int getKurzrRadius(){
-        return kurzrRadius;
+    // @Override
+    public void zeichne(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(new BasicStroke(linienStaerke));
+        g2.setColor(fuellFarbe);
+        g2.fillOval(positionX, positionY, langerRadius, kurzrRadius);
+        g2.setColor(linienFarbe);
+        g2.drawOval(positionX, positionY, langerRadius, kurzrRadius);
     }
 }
