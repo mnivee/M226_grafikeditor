@@ -29,23 +29,23 @@ final class EditorControl {
         switch(figurTyp) {
             case 'k':
                 int radius = (int) Math.sqrt(hoehe * hoehe + breite * breite);
-                Kreis kreis = new Kreis(x, y, radius);
+                Kreis kreis = new Kreis("Kreis",x, y, radius);
                 zeichnung.hinzufuegen(kreis);
                 break;
             case 'l':
-                Linie linie = new Linie(ersterPunkt.x, ersterPunkt.y, zweiterPunkt.x, zweiterPunkt.y);
+                Linie linie = new Linie("Linie",ersterPunkt.x, ersterPunkt.y, zweiterPunkt.x, zweiterPunkt.y);
                 zeichnung.hinzufuegen(linie);
                 break;
             case 'r':
-                Rechteck rechteck = new Rechteck(x, y, hoehe, breite);
+                Rechteck rechteck = new Rechteck("Rechteck",x, y, hoehe, breite);
                 zeichnung.hinzufuegen(rechteck);
                 break;
             case 'e':
-                Ellipse ellipse = new Ellipse(x, y, breite, hoehe);
+                Ellipse ellipse = new Ellipse("Ellipse",x, y, breite, hoehe);
                 zeichnung.hinzufuegen(ellipse);
                 break;
             case 'a':
-                RechteckRund rechteckRund = new RechteckRund(x, y, hoehe, breite, 20, 20);
+                RechteckRund rechteckRund = new RechteckRund("Rechteck rund",x, y, hoehe, breite, 20, 20);
                 zeichnung.hinzufuegen(rechteckRund);
                 break;
             case 'd':

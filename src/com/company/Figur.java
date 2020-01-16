@@ -1,6 +1,6 @@
 package com.company;
 
-import java.awt.*;
+        import java.awt.*;
 
 public abstract class Figur {
     protected int positionX;
@@ -29,4 +29,9 @@ public abstract class Figur {
     }
 
     public abstract void zeichne(Graphics g);
+
+    public abstract String toString();
 }
+
+
+

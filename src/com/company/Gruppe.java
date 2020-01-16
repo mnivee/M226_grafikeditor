@@ -3,7 +3,7 @@ package com.company;
 import java.awt.*;
 import java.util.Vector;
 
-public class Gruppe extends Figur{
+public class Gruppe extends Figur {
 
     public Vector<Figur> figurenGruppe;
 
@@ -12,14 +12,19 @@ public class Gruppe extends Figur{
         figurenGruppe = new Vector<Figur>();
     }
 
-    /*
-        * Figuren hinzufügen
-        * param f
+    /**
+     * Figur zum Vektor hinzufügen.
+     * @param f
      */
-    public void gruppiereFigur(Figur f){
+    public void gruppiereFigur(Figur f) {
         figurenGruppe.add(f);
     }
 
-    public void zeichne(Graphics g)
-    { }
+    @Override
+    public void zeichne(Graphics g) { }
+
+    @Override
+    public String toString() {
+        return null;
     }
+}
