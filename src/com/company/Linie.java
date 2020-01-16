@@ -11,8 +11,8 @@ public class Linie extends Figur {
         this.endeX = endeX;
         this.endeY = endeY;
     }
-    public Linie(int positionX, int positionY, int endeX, int endeY,int linienStaerke, Color linienFarbe){
-        super(positionX, positionY, linienStaerke, linienFarbe);
+    public Linie(int positionX, int positionY, int endeX, int endeY, Color farbe){
+        super(positionX, positionY, farbe);
         this.endeX = endeX;
         this.endeY = endeY;
     }
@@ -27,10 +27,7 @@ public class Linie extends Figur {
     // @Override
     public void zeichne(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
-        if (linienFarbe != null) {
-            g2.setStroke(new BasicStroke(linienStaerke));
-            g2.setColor(linienFarbe);
-        }
+        g2.setColor(farbe);
         g2.drawLine(positionX, positionY, endeX, endeY);
     }
 

@@ -6,6 +6,7 @@ final class EditorControl {
     private Zeichnung zeichnung = new Zeichnung();
     private char figurTyp;
     private Point ersterPunkt;
+    private Color zeichenFarbe = Color.gray;
 
     public void allesNeuZeichnen(Graphics g) {
         zeichnung.zeichneFiguren(g);
@@ -17,7 +18,6 @@ final class EditorControl {
 
     public void setErsterPunkt(Point ersterPunkt) {
         this.ersterPunkt = ersterPunkt;
-        System.out.println(ersterPunkt.x + " " +ersterPunkt.y);
     }
 
     public void erzeugeFigurMitZweitemPunkt(Point zweiterPunkt) {
@@ -25,8 +25,6 @@ final class EditorControl {
         int y = Math.min(zweiterPunkt.y, ersterPunkt.y);
         int hoehe = Math.abs(zweiterPunkt.y - ersterPunkt.y);
         int breite = Math.abs(zweiterPunkt.x - ersterPunkt.x);
-        System.out.println(ersterPunkt.x + " " +ersterPunkt.y);
-        System.out.println(x + " " +y);
 
         switch(figurTyp) {
             case 'k':
@@ -54,8 +52,27 @@ final class EditorControl {
                 int y3 = (int) Math.sqrt(hoehe * hoehe - (hoehe * hoehe) / 4) + ersterPunkt.y;
                 int x3 = hoehe / 2 + ersterPunkt.x;
 
-                Dreieck dreieck = new Dreieck(ersterPunkt.x, ersterPunkt.y, zweiterPunkt.x, zweiterPunkt.y, x3, y3, 2, Color.gray);
+                Dreieck dreieck = new Dreieck(ersterPunkt.x, ersterPunkt.y, zweiterPunkt.x, zweiterPunkt.y, x3, y3, Color.green);
                 zeichnung.hinzufuegen(dreieck);
+                break;
+        }
+    }
+    public void setZeichenFarbe(char farbe) {
+        switch(farbe) {
+            case '1':
+                zeichenFarbe = Color.red;
+                break;
+            case '2':
+                zeichenFarbe = Color.green;
+                break;
+            case '3':
+                zeichenFarbe = Color.blue;
+                break;
+            case '4':
+                zeichenFarbe = Color.yellow;
+                break;
+            case '5':
+                zeichenFarbe = Color.orange;
                 break;
         }
     }

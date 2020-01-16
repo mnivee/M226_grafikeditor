@@ -16,8 +16,8 @@ public class RechteckRund extends Figur {
     this.bogenBreite = bogenBreite;
     }
 
-    RechteckRund(int positionX, int positionY, int breite, int hoehe, int bogenHoehe, int bogenBreite, int linienStaerke, Color linienFarbe, Color fuellFarbe) {
-    super(positionX, positionY, linienStaerke, linienFarbe, fuellFarbe);
+    RechteckRund(int positionX, int positionY, int breite, int hoehe, int bogenHoehe, int bogenBreite, Color farbe) {
+    super(positionX, positionY, farbe);
     this.breite = breite;
     this.hoehe = hoehe;
     this.bogenHoehe = bogenHoehe;
@@ -26,14 +26,8 @@ public class RechteckRund extends Figur {
 
     public void zeichne(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
-        if (linienFarbe != null) {
-            g2.setStroke(new BasicStroke(linienStaerke));
-            g2.setColor(fuellFarbe);
-            g2.fillRoundRect(positionX, positionY, breite, hoehe, bogenBreite, bogenHoehe);
-            g2.setColor(linienFarbe);
-            g2.drawRoundRect(positionX, positionY, breite, hoehe, bogenBreite, bogenHoehe);
-        } else {
-            g2.fillRoundRect(positionX, positionY, breite, hoehe, bogenBreite, bogenHoehe);
-        }
+        g2.setColor(farbe);
+        g2.drawRoundRect(positionX, positionY, breite, hoehe, bogenBreite, bogenHoehe);
+
     }
 }

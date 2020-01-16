@@ -5,30 +5,22 @@ import java.awt.*;
 public abstract class Figur {
     protected int positionX;
     protected int positionY;
-    protected int linienStaerke;
-    protected Color linienFarbe;
-    protected Color fuellFarbe;
+    protected Color farbe;
 
     public Figur(){
     }
-    public Figur(int positionX, int positionY, int linienStaerke, Color linienFarbe, Color fuellFarbe){
+    public Figur(Color farbe){
+        this.farbe = farbe;
+    }
+    public Figur(int positionX, int positionY){
         this.positionX = positionX;
         this.positionY = positionY;
-        this.linienStaerke = linienStaerke;
-        this.linienFarbe = linienFarbe;
-        this.fuellFarbe = fuellFarbe;
     }
 
-    public Figur(int positionX, int positionY, int linienStaerke, Color linienFarbe){
+    public Figur(int positionX, int positionY, Color farbe){
         this.positionX = positionX;
         this.positionY = positionY;
-        this.linienStaerke = linienStaerke;
-        this.linienFarbe = linienFarbe;
-    }
-
-    public Figur(int linienStaerke, Color linienFarbe){
-        this.linienStaerke = linienStaerke;
-        this.linienFarbe = linienFarbe;
+        this.farbe = farbe;
     }
 
     public void move (int deltaX, int deltaY){
@@ -36,7 +28,5 @@ public abstract class Figur {
         positionY += deltaY;
     }
 
-    public Figur(int positionX, int positionY){
-    }
     public abstract void zeichne(Graphics g);
 }

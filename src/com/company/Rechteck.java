@@ -11,8 +11,8 @@ public class Rechteck extends Figur{
         this.hoehe = hoehe;
     }
 
-    public Rechteck(int positionX, int positionY, int breite, int hoehe,int linienStaerke, Color linienFarbe, Color fuellFarbe){
-        super(positionX, positionY, linienStaerke, linienFarbe, fuellFarbe);
+    public Rechteck(int positionX, int positionY, int breite, int hoehe, Color farbe){
+        super(positionX, positionY, farbe);
         this.breite = breite;
         this.hoehe = hoehe;
     }
@@ -20,17 +20,11 @@ public class Rechteck extends Figur{
     // @Override
 
     public void zeichne(Graphics g) {
-        Graphics2D g2 = (Graphics2D) g;
-        if (fuellFarbe != null) {
-            g2.setStroke(new BasicStroke(linienStaerke));
-            g2.setColor(fuellFarbe);
-            g2.fillRect(positionX, positionY, breite, hoehe);
-            g2.setColor(linienFarbe);
+            Graphics2D g2 = (Graphics2D) g;
+            g2.setColor(farbe);
             g2.drawRect(positionX, positionY, breite, hoehe);
-        } else {
-            g2.fillRect(positionX, positionY, breite, hoehe);
         }
     }
-}
+
 
 

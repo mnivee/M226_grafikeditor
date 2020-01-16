@@ -13,8 +13,8 @@ public class Ellipse extends Figur{
         this.kurzrRadius = kurzrRadius;
     }
 
-    public Ellipse(int positionX, int positionY, int langerRadius, int kurzrRadius,int linienStaerke, Color linienFarbe, Color fuellFarbe){
-        super(positionX, positionY, linienStaerke, linienFarbe);
+    public Ellipse(int positionX, int positionY, int langerRadius, int kurzrRadius, Color farbe){
+        super(positionX, positionY, farbe);
         this.langerRadius = langerRadius;
         this.kurzrRadius = kurzrRadius;
     }
@@ -22,10 +22,7 @@ public class Ellipse extends Figur{
     // @Override
     public void zeichne(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
-        g2.setStroke(new BasicStroke(linienStaerke));
-        g2.setColor(fuellFarbe);
-        g2.fillOval(positionX, positionY, langerRadius, kurzrRadius);
-        g2.setColor(linienFarbe);
-        g2.drawOval(positionX, positionY, langerRadius, kurzrRadius);
+        g2.setColor(farbe);
+        g2.drawOval(positionX, positionX, langerRadius, kurzrRadius);
     }
 }
