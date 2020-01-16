@@ -17,6 +17,7 @@ final class EditorControl {
 
     public void setErsterPunkt(Point ersterPunkt) {
         this.ersterPunkt = ersterPunkt;
+        System.out.println(ersterPunkt.x + " " +ersterPunkt.y);
     }
 
     public void erzeugeFigurMitZweitemPunkt(Point zweiterPunkt) {
@@ -24,6 +25,8 @@ final class EditorControl {
         int y = Math.min(zweiterPunkt.y, ersterPunkt.y);
         int hoehe = Math.abs(zweiterPunkt.y - ersterPunkt.y);
         int breite = Math.abs(zweiterPunkt.x - ersterPunkt.x);
+        System.out.println(ersterPunkt.x + " " +ersterPunkt.y);
+        System.out.println(x + " " +y);
 
         switch(figurTyp) {
             case 'k':
