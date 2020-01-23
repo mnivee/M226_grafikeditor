@@ -6,14 +6,14 @@ public class Kreis extends Figur {
     private int radius;
     private String name;
 
-    Kreis(String name, int xPosition, int yPosition, int radius) {
-        super(xPosition, yPosition);
+    Kreis(String name, int positionX, int positionY, int radius) {
+        super(positionX, positionY);
         this.radius = radius;
         this.name = name;
     }
 
-    Kreis(String name, int xPosition, int yPosition, int radius, Color farbe) {
-        super(xPosition, yPosition, farbe);
+    Kreis(String name, int positionX, int positionY, int radius, Color farbe) {
+        super(positionX, positionY, farbe);
         this.radius = radius;
         this.name = name;
     }

@@ -14,7 +14,7 @@ public class Rechteck extends Figur {
         this.name = name;
     }
 
-    Rechteck(String typeName, int xPosition, int yPosition, int hoehe, int breite, Color farbe) {
+    Rechteck(String name, int xPosition, int yPosition, int hoehe, int breite, Color farbe) {
         super(xPosition, yPosition, farbe);
         this.hoehe = hoehe;
         this.breite = breite;
